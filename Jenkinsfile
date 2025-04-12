@@ -16,3 +16,10 @@ pipeline {
         }
     }
 }
+  post {
+        always {
+            archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
+            junit '**/build/test-results/test/*.xml'
+        }
+    }
+}

@@ -8,10 +8,12 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh './gradlew build' // or 'mvn clean install' depending on your setup
-            }
+      stage('Build') {
+    steps {
+        sh 'mvn clean install'
+    }
+}
+
         }
 
         stage('Test') {
